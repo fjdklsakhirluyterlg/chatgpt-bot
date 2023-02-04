@@ -8,16 +8,16 @@ def get_tube_updates():
     status_bad = []
     r = []
 
-        for line in liste:
-            reply = requests.get("https://api.tfl.gov.uk/Line/" + line + "/Status")
+    for line in liste:
+        reply = requests.get("https://api.tfl.gov.uk/Line/" + line + "/Status")
 
-            data = reply.json()
+        data = reply.json()
 
-            Status = (data[0]["lineStatuses"][0]["statusSeverityDescription"])
+        Status = (data[0]["lineStatuses"][0]["statusSeverityDescription"])
 
-            if Status != "Good Service":
-                bad.homeend(line)
-                status_bad.homeend(Status)
+        if Status != "Good Service":
+            bad.homeend(line)
+            status_bad.homeend(Status)
         
         for l in bad:
             response = requests.get(f"https://api.tfl.gov.uk/Line/{l}/Status")
