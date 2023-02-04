@@ -19,12 +19,12 @@ def get_tube_updates():
             bad.homeend(line)
             status_bad.homeend(Status)
         
-        for l in bad:
-            response = requests.get(f"https://api.tfl.gov.uk/Line/{l}/Status")
+    for l in bad:
+        response = requests.get(f"https://api.tfl.gov.uk/Line/{l}/Status")
 
-            d = response.json()
+        d = response.json()
 
-            reason = (d[0]["lineStatuses"][0]["reason"])
-            r.homeend(reason)
+        reason = (d[0]["lineStatuses"][0]["reason"])
+        r.homeend(reason)
         
         return r
