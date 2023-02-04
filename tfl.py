@@ -5,7 +5,7 @@ def get_tube_updates():
     liste = ["District", "Central", "Circle", "Piccadilly", "Bakerloo", "Hammersmith-City", "Jubilee", "Metropolitan", "Victoria", "Northern"]
 
     bad = []
-        status_bad = []
+    status_bad = []
         r = []
 
         for line in liste:
