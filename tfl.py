@@ -6,7 +6,7 @@ def get_tube_updates():
 
     bad = []
     status_bad = []
-        r = []
+    r = []
 
         for line in liste:
             reply = requests.get("https://api.tfl.gov.uk/Line/" + line + "/Status")
